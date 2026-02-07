@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>QR Code Based Crowd Monitoring System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * { box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { margin: 0; background: #f4f6f9; color: #333; }
+
+   
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 { margin: 0; font-size: 22px; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      font-weight: bold;
+      color: #cbd5f5;
+    }
+
+    nav ul li:hover { color: #fff; }
+
+  
+    .intro {
+      height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      background: linear-gradient(135deg, #e0e7ff, #f8fafc);
+      cursor: pointer;
+    }
+
+    .intro h2 {
+      font-size: 34px;
+      color: #1d4ed8;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      font-size: 18px;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    .intro span {
+      margin-top: 30px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    section h2 { color: #1d4ed8; }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 18px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .btn:hover { background: #1d4ed8; }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #e5e7eb;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+
+<header>
+  <nav>
+    <h1>Crowd Monitoring System</h1>
+    <ul>
+      <li onclick="scrollToSection('scan')">QR Scanning</li>
+      <li onclick="scrollToSection('admin')">Admin Dashboard</li>
+      <li onclick="scrollToSection('logs')">Entry / Exit</li>
+    </ul>
+  </nav>
+</header>
+
+
+<div class="intro" onclick="scrollToSection('scan')">
+  <h2>QR Code Based Crowd Monitoring System</h2>
+  <p>
+    This project is used to control and monitor the number of people inside a place.
+    When a person enters or exits, they scan a QR code at the gate. The system
+    automatically counts how many people are inside and helps prevent overcrowding.
+  </p>
+  <p>
+    It is simple, fast, and useful for places like colleges, malls, offices,
+    events, and public areas.
+  </p>
+ 
+</div>
+
+
+<section id="scan">
+  <h2>QR Code Scanning</h2>
+  <p>
+    This module scans QR codes at the entry and exit points and records
+    movement automatically.
+  </p>
+  <a class="btn" href="scanner.html">Go to QR Scanner</a>
+</section>
+
+
+<section id="admin">
+  <h2>Admin Dashboard</h2>
+  <p>
+    This module shows total entry, exit, and current crowd count
+    for monitoring and control.
+  </p>
+  <a class="btn" href="dashboard.html">Open Dashboard</a>
+</section>
+
+
+<section id="logs">
+  <h2>Entry / Exit Logs</h2>
+  <p>
+    This module stores all entry and exit records and alerts
+    when the crowd limit is exceeded.
+  </p>
+  <a class="btn" href="logs.html">View Logs</a>
+</section>
+
+
+<script>
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

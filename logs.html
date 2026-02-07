@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Entry / Exit Logs – Crowd Monitoring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #1d4ed8;
+      margin-bottom: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    table th {
+      background: #2563eb;
+      color: white;
+    }
+
+    table tr:nth-child(even) {
+      background: #f1f5f9;
+    }
+
+    .alert {
+      margin-top: 20px;
+      padding: 15px;
+      background: #fee2e2;
+      color: #b91c1c;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #e5e7eb;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Entry / Exit Logs</h1>
+  <p>QR Code Based Crowd Monitoring System</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Movement Records</h2>
+    <p>
+      This section displays the entry and exit records captured through
+      QR code scanning at the gate.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>QR Code ID</th>
+          <th>Type</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>USER001</td>
+          <td>Entry</td>
+          <td>12-02-2026</td>
+          <td>10:15 AM</td>
+        </tr>
+        <tr>
+          <td>USER002</td>
+          <td>Entry</td>
+          <td>12-02-2026</td>
+          <td>10:18 AM</td>
+        </tr>
+        <tr>
+          <td>USER001</td>
+          <td>Exit</td>
+          <td>12-02-2026</td>
+          <td>11:05 AM</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+  
+
+  <a href="frontend.html" class="btn">⬅ Back to Home</a>
+
+</div>
+
+
+</body>
+</html>

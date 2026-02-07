@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Scanner – Crowd Monitoring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <script src="https://unpkg.com/html5-qrcode"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #1d4ed8;
+      margin-bottom: 10px;
+    }
+
+    #reader {
+      width: 100%;
+      margin: 20px auto;
+      border: 2px dashed #2563eb;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #0f172a;
+    }
+
+    .info {
+      margin-top: 10px;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 18px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
+      background: #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>QR Code Scanning</h1>
+  <p>Entry & Exit Monitoring</p>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Scan QR Code</h2>
+ 
+
+    <div id="reader"></div>
+
+    <div id="result">Waiting for scan...</div>
+
+    <a href="frontend.html" class="btn">⬅ Back to Home</a>
+  </div>
+</div>
+
+
+<script>
+    const resultBox = document.getElementById("result");
+  
+    function onScanSuccess(decodedText) {
+      resultBox.innerText = "Scanned QR Code: " + decodedText;
+    }
+  
+    const html5QrCode = new Html5Qrcode("reader");
+  
+    Html5Qrcode.getCameras()
+      .then(cameras => {
+        if (cameras.length > 0) {
+          html5QrCode.start(
+            cameras[0].id,
+            {
+              fps: 10,
+              qrbox: 250
+            },
+            onScanSuccess
+          );
+        } else {
+          resultBox.innerText = "Camera not found";
+        }
+      })
+      .catch(error => {
+        resultBox.innerText = "Please allow camera permission";
+        console.error(error);
+      });
+  </script>
+  
+
+</body>
+</html>
